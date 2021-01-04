@@ -13,10 +13,14 @@
       <input type="submit" value="Add To List" />
     </form>
     <ul>
-      <li v-for="(item, index) in toDos" :key="index">
+      <li
+        v-for="(item, index) in toDos"
+        :key="index"
+        :class="{ done: item.done }"
+        @click="doneToDo(item)"
+      >
         <span>{{ item.content }}</span>
         <span>
-          <button v-if="!item.done" @click="doneToDo(item)">Done</button>
           <button @click="removeToDo(index)">Delete</button>
         </span>
       </li>
@@ -61,7 +65,8 @@ export default {
     };
 
     const doneToDo = (item) => {
-      item.done = true;
+      item.done = !item.done;
+      console.log(item.done);
     };
 
     const saveData = () => {
