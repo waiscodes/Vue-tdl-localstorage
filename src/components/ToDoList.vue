@@ -17,9 +17,8 @@
         v-for="(item, index) in toDos"
         :key="index"
         :class="{ done: item.done }"
-        @click="doneToDo(item)"
       >
-        <span>{{ item.content }}</span>
+        <span @click="doneToDo(item)">{{ item.content }}</span>
         <span>
           <button @click="updateToDo(item)">Edit</button>
           <button @click="removeToDo(index)">Delete</button>
