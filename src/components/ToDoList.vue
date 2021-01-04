@@ -1,7 +1,7 @@
 <template>
   <div class="tdl">
     <h2>{{ yourName }}'s To Do List</h2>
-    <form>
+    <form action="#" @submit.prevent="addToDo">
       <label for="input"></label>
       <input type="text" name="input" id="input" />
       <input type="submit" value="Add To List" />
