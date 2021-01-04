@@ -16,7 +16,7 @@
       <li v-for="(item, index) in toDos" :key="index">
         <span>{{ item.content }}</span>
         <span>
-          <button @click="doneToDo(index)">Done</button>
+          <button v-if="!item.done" @click="doneToDo(index)">Done</button>
           <button @click="removeToDo(index)">Delete</button>
         </span>
       </li>
