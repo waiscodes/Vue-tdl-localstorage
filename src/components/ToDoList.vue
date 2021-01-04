@@ -49,12 +49,19 @@ export default {
         content: newToDo.value,
       });
       newToDo.value = "";
+      saveData();
+    };
+
+    const saveData = () => {
+      const storageData = JSON.stringify(toDos.value);
+      localStorage.setItem("todos", storageData);
     };
 
     return {
       newToDo,
       toDos,
       addToDo,
+      saveData,
     };
   },
 };
