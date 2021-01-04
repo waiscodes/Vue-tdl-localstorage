@@ -21,6 +21,7 @@
       >
         <span>{{ item.content }}</span>
         <span>
+          <button @click="updateToDo(item)">Edit</button>
           <button @click="removeToDo(index)">Delete</button>
         </span>
       </li>
@@ -65,6 +66,10 @@ export default {
       saveData();
     };
 
+    const updateToDo = () => {
+      console.log("update");
+    };
+
     const doneToDo = (item) => {
       item.done = !item.done;
       saveData();
@@ -82,6 +87,7 @@ export default {
       saveData,
       removeToDo,
       doneToDo,
+      updateToDo,
     };
   },
 };
