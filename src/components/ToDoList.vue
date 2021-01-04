@@ -2,8 +2,14 @@
   <div class="tdl">
     <h2>{{ yourName }}'s To Do List</h2>
     <form action="#" @submit.prevent="addToDo">
-      <label for="input"></label>
-      <input type="text" name="input" id="input" />
+      <label for="input">New To Do</label>
+      <input
+        type="text"
+        name="input"
+        id="input"
+        v-model="newToDo"
+        autocomplete="off"
+      />
       <input type="submit" value="Add To List" />
     </form>
     <ul>
@@ -33,12 +39,10 @@ export default {
     const toDos = ref(toDosData);
 
     const addToDo = () => {
-      if (newToDo.value) {
-        toDos.value.unshift({
-          done: false,
-          content: newToDo.value,
-        });
-      }
+      toDos.value.unshift({
+        done: false,
+        content: newToDo.value,
+      });
     };
 
     return {
