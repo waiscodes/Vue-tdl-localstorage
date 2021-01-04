@@ -20,7 +20,7 @@
       >
         <span @click="doneToDo(item)">{{ item.content }}</span>
         <span>
-          <button @click="updateToDo(item)">Edit</button>
+          <button @click="updateToDo(item, index)">Edit</button>
           <button @click="removeToDo(index)">Delete</button>
         </span>
       </li>
@@ -65,10 +65,9 @@ export default {
       saveData();
     };
 
-    const updateToDo = (item) => {
+    const updateToDo = (item, index) => {
       newToDo.value = item.content;
-      console.log(item.content);
-      return newToDo;
+      removeToDo(index);
     };
 
     const doneToDo = (item) => {
