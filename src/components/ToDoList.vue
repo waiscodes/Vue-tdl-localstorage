@@ -6,6 +6,9 @@
       <input type="text" name="input" id="input" />
       <input type="submit" value="Add To List" />
     </form>
+    <ul>
+      <li></li>
+    </ul>
   </div>
 </template>
 
