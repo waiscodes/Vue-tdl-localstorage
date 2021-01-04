@@ -25,4 +25,7 @@ export default {
 .tdl {
   border: solid;
 }
+ul li {
+  display: block;
+}
 </style>
