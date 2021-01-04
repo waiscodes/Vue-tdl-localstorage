@@ -48,6 +48,7 @@ export default {
         done: false,
         content: newToDo.value,
       });
+      newToDo.value = "";
     };
 
     return {
