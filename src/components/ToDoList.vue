@@ -16,8 +16,8 @@
       <li v-for="(item, index) in toDos" :key="index">
         <span>{{ item.content }}</span>
         <span>
-          <button>Done</button>
-          <button>Delete</button>
+          <button @click="doneToDo(index)">Done</button>
+          <button @click="removeToDo(index)">Delete</button>
         </span>
       </li>
     </ul>
@@ -55,6 +55,14 @@ export default {
       newToDo.value = "";
     };
 
+    const removeToDo = () => {
+      console.log("Deleted");
+    };
+
+    const doneToDo = () => {
+      console.log("Done");
+    };
+
     const saveData = () => {
       const storageData = JSON.stringify(toDos.value);
       localStorage.setItem("todos", storageData);
@@ -65,6 +73,8 @@ export default {
       toDos,
       addToDo,
       saveData,
+      removeToDo,
+      doneToDo,
     };
   },
 };
