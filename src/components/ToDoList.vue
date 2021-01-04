@@ -16,7 +16,7 @@
       <li v-for="(item, index) in toDos" :key="index">
         <span>{{ item.content }}</span>
         <span>
-          <button v-if="!item.done" @click="doneToDo(index)">Done</button>
+          <button v-if="!item.done" @click="doneToDo(item)">Done</button>
           <button @click="removeToDo(index)">Delete</button>
         </span>
       </li>
@@ -55,12 +55,13 @@ export default {
       newToDo.value = "";
     };
 
-    const removeToDo = () => {
-      console.log("Deleted");
+    const removeToDo = (index) => {
+      toDos.value.splice(index, 1);
+      console.log(index);
     };
 
-    const doneToDo = () => {
-      console.log("Done");
+    const doneToDo = (item) => {
+      item.done = true;
     };
 
     const saveData = () => {
