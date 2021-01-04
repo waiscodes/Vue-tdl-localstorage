@@ -57,16 +57,17 @@ export default {
         content: newToDo.value,
       });
       newToDo.value = "";
+      saveData();
     };
 
     const removeToDo = (index) => {
       toDos.value.splice(index, 1);
-      console.log(index);
+      saveData();
     };
 
     const doneToDo = (item) => {
       item.done = !item.done;
-      console.log(item.done);
+      saveData();
     };
 
     const saveData = () => {
@@ -93,7 +94,7 @@ export default {
 ul li {
   display: block;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 5px;
   padding: 0px;
 }
