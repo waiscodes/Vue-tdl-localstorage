@@ -12,3 +12,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.tdl {
+  border: solid;
+}
+</style>
