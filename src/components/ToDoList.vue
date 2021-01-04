@@ -65,8 +65,10 @@ export default {
       saveData();
     };
 
-    const updateToDo = () => {
-      console.log("update");
+    const updateToDo = (item) => {
+      newToDo.value = item.content;
+      console.log(item.content);
+      return newToDo;
     };
 
     const doneToDo = (item) => {
