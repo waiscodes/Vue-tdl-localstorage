@@ -32,9 +32,19 @@ export default {
     const toDosData = JSON.parse(localStorage.getItem("todos")) || defaultData;
     const toDos = ref(toDosData);
 
+    const addToDo = () => {
+      if (newToDo.value) {
+        toDos.value.unshift({
+          done: false,
+          content: newToDo.value,
+        });
+      }
+    };
+
     return {
       newToDo,
       toDos,
+      addToDo,
     };
   },
 };
