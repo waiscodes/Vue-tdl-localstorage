@@ -13,7 +13,9 @@
       <input type="submit" value="Add To List" />
     </form>
     <ul>
-      <li></li>
+      <li v-for="(item, index) in toDos" :key="index">
+        {{ item.content }}
+      </li>
     </ul>
   </div>
 </template>
