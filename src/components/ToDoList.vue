@@ -14,7 +14,11 @@
     </form>
     <ul>
       <li v-for="(item, index) in toDos" :key="index">
-        {{ item.content }}
+        <span>{{ item.content }}</span>
+        <span>
+          <button>Done</button>
+          <button>Delete</button>
+        </span>
       </li>
     </ul>
   </div>
@@ -49,7 +53,6 @@ export default {
         content: newToDo.value,
       });
       newToDo.value = "";
-      saveData();
     };
 
     const saveData = () => {
@@ -73,5 +76,7 @@ export default {
 }
 ul li {
   display: block;
+  display: flex;
+  justify-content: space-between;
 }
 </style>
