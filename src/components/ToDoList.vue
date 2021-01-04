@@ -1,6 +1,6 @@
 <template>
   <div class="tdl">
-    <p>{{ yourName }}'s To Do List</p>
+    <h2>{{ yourName }}'s To Do List</h2>
     <form>
       <label for="input"></label>
       <input type="text" name="input" id="input" />
@@ -13,10 +13,18 @@
 </template>
 
 <script>
+import { ref } from "vue";
+
 export default {
   name: "ToDoList",
   props: {
     yourName: String,
+  },
+  setup() {
+    const newToDo = ref("");
+    return {
+      newToDo,
+    };
   },
 };
 </script>
