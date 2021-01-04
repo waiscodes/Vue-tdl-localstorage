@@ -101,4 +101,8 @@ ul li {
 ul {
   padding: 0px;
 }
+
+.done {
+  text-decoration: line-through;
+}
 </style>
