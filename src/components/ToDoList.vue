@@ -26,7 +26,10 @@ import { ref } from "vue";
 export default {
   name: "ToDoList",
   props: {
-    yourName: String,
+    yourName: {
+      type: String,
+      required: true,
+    },
   },
 
   setup() {
