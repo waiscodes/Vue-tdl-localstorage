@@ -78,5 +78,11 @@ ul li {
   display: block;
   display: flex;
   justify-content: space-between;
+  margin: 5px;
+  padding: 0px;
+}
+
+ul {
+  padding: 0px;
 }
 </style>
