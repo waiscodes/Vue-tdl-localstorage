@@ -20,10 +20,21 @@ export default {
   props: {
     yourName: String,
   },
+
   setup() {
     const newToDo = ref("");
+    const defaultData = [
+      {
+        done: false,
+        content: "Read a book",
+      },
+    ];
+    const toDosData = JSON.parse(localStorage.getItem("todos")) || defaultData;
+    const toDos = ref(toDosData);
+
     return {
       newToDo,
+      toDos,
     };
   },
 };
